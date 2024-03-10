@@ -1,0 +1,1 @@
+<p class="text-xl text-gray-900 font-montserrat font-bold">{ Apren <span class="text-primary">Dev</span> }</p>

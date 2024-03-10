@@ -1,0 +1,27 @@
+@extends('layouts.app')
+
+@section('title', 'AprenDev')
+
+@section('content')
+
+<div class="container mx-auto px-4 py-8 h-auto lg:h-full grid place-items-center">
+    <h1 class="text-4xl font-bold mb-4 text-center">Bienvenido a { Apren <span class="text-primary">Dev</span> } </h1>
+    <p class="text-lg text-gray-700 mb-8">AprenDev es una innovadora plataforma educativa diseñada para programadores, estudiantes de primaria, universitarios ofreciendo una amplia gama de recursos que incluyen videos. Nuestro compromiso es proporcionar un ambiente de aprendizaje enriquecedor. Buscamos llevar conocimientos a todas aquellas personas que quieran ampliar sus habilidades.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg transition-all transform hover:-translate-y-4 hover:shadow-xl">
+            <h2 class="text-xl font-bold mb-2 text-center"><span class="text-primary">Módulo 1:</span> Arquitectura y Programación de Sistemas</h2>
+            <p class="text-gray-700 text-justify pt-3">Decidimos utilizar PHP con el framework Laravel para la arquitectura y programación del sistema. Además, implementamos una base de datos y seguimos las mejores prácticas de ingeniería de software.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg transition-all transform hover:-translate-y-4 hover:shadow-xl">
+            <h2 class="text-xl font-bold mb-2 text-center"><span class="text-primary">Módulo 2:</span>Sistemas Inteligentes</h2>
+            <p class="text-gray-700 text-justify pt-3">Implementamos un sistema de recomendación basado en contenido, permitiendo a los usuarios seleccionar categorías de interés al registrarse. Esto se basa en algoritmos de filtrado basado en contenido para generar recomendaciones personalizadas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg transition-all transform hover:-translate-y-4 hover:shadow-xl">
+            <h2 class="text-xl font-bold mb-2 text-center"><span class="text-primary">Módulo 3:</span> Sistemas Distribuidos</h2>
+            <p class="text-gray-700 text-justify pt-3">Nuestra plataforma está alojada en DOM Cloud, una plataforma de alojamiento en la nube que utiliza una arquitectura distribuida para garantizar la disponibilidad y el rendimiento del sistema.</p>
+        </div>
+    </div>
+</div>
+
+@endsection
