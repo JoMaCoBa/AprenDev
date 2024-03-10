@@ -6,7 +6,7 @@
 <main class="w-full h-screen bg-gray-100 flex justify-center items-center">
     <div class="m-4 w-full h-3/4 md:w-1/2 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center ">
         <div class="flex justify-center py-8">
-            <img src="{{ asset('images/header.jpg') }}" alt="Foto de Perfil de {{ $user->username }}" class="w-48 h-48 md:w-64 md:h-64 rounded-full">
+            <img src="{{url(auth()->user()->profile_photo_path) }}" alt="Foto de Perfil de {{ $user->username }}" class="w-48 h-48 md:w-64 md:h-64 rounded-full">
         </div>
         <div class="px-6 py-4 text-center md:text-left">
             <p class="text-xl font-semibold">{{ $user->name }}</p>
@@ -19,9 +19,9 @@
                     @endforeach
                 </div>
             </div>
-            {{-- <div class="mt-6">
-                <button class="Primary-Button w-full">Editar</button>
-            </div> --}}
+            <div class="mt-6">
+                <a href="{{ route('profile.edit', $user->username) }}" class="Primary-Button w-full">Editar</a>
+            </div>
         </div>
     </div>
 </main>

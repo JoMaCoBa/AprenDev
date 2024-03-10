@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/scroll.css') }}">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
 
@@ -33,7 +33,7 @@
             <div class="flex space-x-4 items-center">
                 <a class="flex w-48 items-center justify-center space-x-2 p-2 transition-all ease-linear border-primary rounded-lg font-normal text-primary hover:border-2"
                     href="{{ route('profile.index', ['user' => auth()->user()->username])}}">
-                    <img class="rounded-full w-8 h-8" src="{{ asset('images/header.jpg') }}" alt="Profile Photo">
+                    <img class="rounded-full w-8 h-8" src="{{ url(auth()->user()->profile_photo_path) }}" alt="Profile Photo">
                     <p>{{auth()->user()->username}}</p>
                 </a>
                 <form action="{{ route('logout') }}" method="POST">
