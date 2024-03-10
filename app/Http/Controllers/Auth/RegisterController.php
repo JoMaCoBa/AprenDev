@@ -40,7 +40,8 @@ class RegisterController extends Controller
             'email'     => $request->email,
             'name'      => $request->name,
             'username'  => $request->username,
-            'password'  => Hash::make($request->password)
+            'password'  => Hash::make($request->password),
+            'profile_photo_path' => 'images/usuario.svg',
         ]);
 
         // Sincronizar las categorías seleccionadas por el usuario

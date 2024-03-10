@@ -39,6 +39,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::controller(ProfileController::class)->group(function () {
     Route::get('/{user:username}', 'index')->name('profile.index');
+    Route::get('/{user:username}/edit', 'edit')->name('profile.edit');
+    Route::put('/{user:username}', 'update')->name('profile.update');
 });
 
 

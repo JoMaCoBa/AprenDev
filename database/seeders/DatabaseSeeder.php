@@ -51,9 +51,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'C++',
         ]);
         
-        \App\Models\Course::factory(20)->create();
+        // \App\Models\Course::factory(20)->create();
         
-        \App\Models\lesson::factory(6)->create();
+        // \App\Models\lesson::factory(6)->create();
 
 
     }

@@ -18,18 +18,18 @@ class CourseController extends Controller
     
     public function showCoursesByUserCategories(Request $request)
     {
-
-        //Obtener al usuario autenticado
+        // Obtener al usuario autenticado
         $user = $request->user();
-
+    
         // Obtener categorias del usuario
         $userCategories = $user->categories()->pluck('categories.id');
-
-        // Obtener los cursos asociados a las categorías del usuario
-        $courses = Course::whereIn('category_id', $userCategories)->get();
-
+    
+        // Obtener los cursos asociados a las categorías del usuario y ordenarlos por likes de mayor a menor
+        $courses = Course::whereIn('category_id', $userCategories)
+                        ->orderByDesc('likes') // Ordenar por likes de manera descendente
+                        ->get();
+    
         return $courses;
-
     }
 
     public function index(Course $course)
