@@ -6,7 +6,11 @@
 <main class="w-full h-screen bg-gray-100 flex justify-center items-center">
     <div class="m-4 w-full h-3/4 md:w-1/2 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center ">
         <div class="flex justify-center py-8">
-            <img src="{{url(auth()->user()->profile_photo_path) }}" alt="Foto de Perfil de {{ $user->username }}" class="w-48 h-48 md:w-64 md:h-64 rounded-full">
+            @if(auth()->user()->profile_photo_path)
+                <img src="{{ asset(auth()->user()->profile_photo_path) }}" alt="Foto de Perfil de {{ $user->username }}" class="w-48 h-48 md:w-64 md:h-64 rounded-full">
+            @else
+                <img src="{{ asset('images/usuario.svg') }}" alt="Foto de Perfil Predeterminada" class="w-48 h-48 md:w-64 md:h-64 rounded-full">
+            @endif
         </div>
         <div class="px-6 py-4 text-center md:text-left">
             <p class="text-xl font-semibold">{{ $user->name }}</p>
@@ -26,3 +30,4 @@
     </div>
 </main>
 @endsection
+

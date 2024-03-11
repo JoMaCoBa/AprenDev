@@ -23,6 +23,8 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
 
+        $path_image = 'images/usuario.svg';
+
         //Conversión de username
         $request->request->add(['username' => Str::slug($request->username)]);
 
@@ -41,7 +43,7 @@ class RegisterController extends Controller
             'name'      => $request->name,
             'username'  => $request->username,
             'password'  => Hash::make($request->password),
-            'profile_photo_path' => 'images/usuario.svg',
+            'profile_photo_path' => $path_image,
         ]);
 
         // Sincronizar las categorías seleccionadas por el usuario

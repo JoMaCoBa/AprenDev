@@ -33,7 +33,6 @@
             <div class="flex space-x-4 items-center">
                 <a class="flex w-48 items-center justify-center space-x-2 p-2 transition-all ease-linear border-primary rounded-lg font-normal text-primary hover:border-2"
                     href="{{ route('profile.index', ['user' => auth()->user()->username])}}">
-                    <img class="rounded-full w-8 h-8" src="{{ url(auth()->user()->profile_photo_path) }}" alt="Profile Photo">
                     <p>{{auth()->user()->username}}</p>
                 </a>
                 <form action="{{ route('logout') }}" method="POST">
@@ -54,9 +53,6 @@
             </div>
 
             <div class="flex items-center justify-around w-50 space-x-4">
-                <button class="flex justify-center items-center">
-                    <i class="fa-solid fa-circle-half-stroke text-gray-300 text-2xl transition-all ease-linear hover:text-primary"></i>
-                </button>
                 <a class="Primary-Button" href="{{ route('login') }}">Iniciar Sesión</a>
                 <a class="Primary-Button" href="{{ route('register.index') }}">Registrarse</a>
             </div>
